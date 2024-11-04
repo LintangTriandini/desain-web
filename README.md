@@ -859,3 +859,12 @@ function showInfo(catBreed) {
 function closeInfo() {
     document.getElementById('info-modal').style.display = "none";
 }
+
+![image](https://github.com/user-attachments/assets/5d1440b3-7387-460a-adf4-08141dd92618)
+![image](https://github.com/user-attachments/assets/97af9230-e1dd-43c3-afae-a5acb9d4a9e5)
+![image](https://github.com/user-attachments/assets/14679eda-5cce-4248-98ab-d4ca20a4ce75)
+
+![image](https://github.com/user-attachments/assets/04279284-ec6e-4f50-84b9-4bc756307cbe)
+
+
+
