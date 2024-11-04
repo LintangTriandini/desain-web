@@ -466,3 +466,396 @@ body {
         margin: 25% auto;
     }
 }
+
+#script.js
+const catInfo = {
+    'persian': {
+        name: 'Kucing Persian',
+        image: 'picture/persian.jpg',
+        description: 'Kucing Persian dikenal dengan wajah datar dan bulu panjangnya yang indah.',
+        origin: 'Persia (Iran)',
+        traits: 'Tenang, lembut, dan suka bermanja',
+        care: 'Membutuhkan perawatan bulu yang intensif'
+    },
+    'siamese': {
+        name: 'Kucing Siam',
+        image: 'picture/siamese.jpg',
+        description: 'Kucing Siam terkenal dengan warna tubuhnya yang khas dan sifatnya yang sangat sosial.',
+        origin: 'Thailand (dahulu dikenal sebagai Siam)',
+        traits: 'Cerdas, vokal, dan sangat sosial',
+        care: 'Mudah dirawat, tidak memerlukan perawatan khusus'
+    },
+    'maine-coon': {
+        name: 'Kucing Maine Coon',
+        image: 'picture/maine-coon.jpg',
+        description: 'Maine Coon adalah salah satu ras kucing terbesar dengan bulu panjang dan tebal.',
+        origin: 'Maine, Amerika Serikat',
+        traits: 'Ramah, cerdas, dan suka bermain',
+        care: 'Membutuhkan perawatan bulu yang intensif'
+    },
+    'abyssinian': {
+        name: 'Kucing Abyssinian',
+        image: 'picture/abyssinian.jpg',
+        description: 'Abyssinian dikenal dengan bulu pendeknya yang berkilau dan sifatnya yang aktif.',
+        origin: 'Ethiopia',
+        traits: 'Aktif, cerdas, dan penuh rasa ingin tahu',
+        care: 'Perawatan minimal, suka bermain'
+    },
+    'american-wirehair': {
+        name: 'Kucing American Wirehair',
+        image: 'picture/american-wirehair.jpg',
+        description: 'American Wirehair memiliki bulu yang unik dengan tekstur kasar dan keriting.',
+        origin: 'Amerika Serikat',
+        traits: 'Tenang, ramah, dan mudah beradaptasi',
+        care: 'Perawatan bulu minimal'
+    },
+    'asian': {
+        name: 'Kucing Asian',
+        image: 'picture/asian.jpg',
+        description: 'Asian adalah ras yang berasal dari persilangan Burmese dengan kucing domestik.',
+        origin: 'Inggris',
+        traits: 'Cerdas, penuh kasih sayang, dan aktif',
+        care: 'Perawatan minimal'
+    },
+    'australian-mist': {
+        name: 'Kucing Australian Mist',
+        image: 'picture/australian-mist.jpg',
+        description: 'Australian Mist memiliki bulu pendek dan pola tabby yang unik.',
+        origin: 'Australia',
+        traits: 'Ramah, tenang, dan cocok untuk keluarga',
+        care: 'Perawatan minimal'
+    },
+    'balinese': {
+        name: 'Kucing Balinese',
+        image: 'picture/balinese.jpg',
+        description: 'Balinese adalah versi bulu panjang dari kucing Siamese.',
+        origin: 'Amerika Serikat',
+        traits: 'Cerdas, vokal, dan penuh kasih sayang',
+        care: 'Membutuhkan perawatan bulu rutin'
+    },
+    'bengal': {
+        name: 'Kucing Bengal',
+        image: 'picture/bengal.jpg',
+        description: 'Bengal memiliki pola bulu yang mirip dengan kucing liar seperti leopard.',
+        origin: 'Amerika Serikat',
+        traits: 'Aktif, cerdas, dan suka bermain air',
+        care: 'Membutuhkan banyak aktivitas dan stimulasi'
+    },
+    'birman': {
+        name: 'Kucing Birman',
+        image: 'picture/birman.jpg',
+        description: 'Birman dikenal dengan "kaus kaki" putihnya dan mata biru.',
+        origin: 'Myanmar (Burma)',
+        traits: 'Lembut, penuh kasih sayang, dan mudah diatur',
+        care: 'Perawatan bulu sedang'
+    },
+    'bombay': {
+        name: 'Kucing Bombay',
+        image: 'picture/bombay.jpg',
+        description: 'Bombay memiliki bulu hitam mengkilap dan mata tembaga.',
+        origin: 'Amerika Serikat',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'british-shorthair': {
+        name: 'Kucing British Shorthair',
+        image: 'picture/british-shorthair.jpg',
+        description: 'British Shorthair memiliki tubuh yang kekar dengan bulu tebal.',
+        origin: 'Inggris',
+        traits: 'Tenang, mudah diatur, dan tidak terlalu aktif',
+        care: 'Perawatan bulu minimal'
+    },
+    'burmese': {
+        name: 'Kucing Burmese',
+        image: 'picture/burmese.jpg',
+        description: 'Burmese memiliki bulu pendek yang halus dan tubuh yang berotot.',
+        origin: 'Myanmar (Burma)',
+        traits: 'Cerdas, penuh energi, dan suka berinteraksi',
+        care: 'Perawatan minimal'
+    },
+    'burmilla': {
+        name: 'Kucing Burmilla',
+        image: 'picture/burmilla.jpg',
+        description: 'Burmilla memiliki bulu pendek dengan ujung bulu berwarna perak.',
+        origin: 'Inggris',
+        traits: 'Lembut, penuh kasih sayang, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'chinchilla': {
+        name: 'Kucing Chinchilla',
+        image: 'picture/chinchilla.jpg',
+        description: 'Chinchilla adalah variasi dari Persian dengan bulu putih berujung hitam.',
+        origin: 'Inggris',
+        traits: 'Tenang, lembut, dan suka bermanja',
+        care: 'Membutuhkan perawatan bulu intensif'
+    },
+    'cornish-rex': {
+        name: 'Kucing Cornish Rex',
+        image: 'picture/cornish-rex.jpg',
+        description: 'Cornish Rex memiliki bulu pendek dan bergelombang yang unik.',
+        origin: 'Inggris',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal, sensitif terhadap suhu'
+    },
+    'cymrics': {
+        name: 'Kucing Cymrics',
+        image: 'picture/cymrics.jpg',
+        description: 'Cymrics adalah versi berbulu panjang dari kucing Manx.',
+        origin: 'Kanada',
+        traits: 'Cerdas, setia, dan suka bermain',
+        care: 'Perawatan bulu sedang'
+    },
+    'devon-rex': {
+        name: 'Kucing Devon Rex',
+        image: 'picture/devon-rex.jpg',
+        description: 'Devon Rex memiliki bulu pendek dan keriting dengan telinga besar.',
+        origin : 'Inggris',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal, sensitif terhadap suhu'
+    },
+    'egyptian-mau': {
+        name: 'Kucing Egyptian Mau',
+        image: 'picture/egyptian-mau.jpg',
+        description: 'Egyptian Mau memiliki bulu pendek dengan pola tabby yang unik.',
+        origin: 'Mesir',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'exotic-shorthair': {
+        name: 'Kucing Exotic Shorthair',
+        image: 'picture/exotic-shorthair.jpg',
+        description: 'Exotic Shorthair memiliki bulu pendek dan tebal dengan wajah datar.',
+        origin: 'Amerika Serikat',
+        traits: 'Tenang, lembut, dan suka bermanja',
+        care: 'Perawatan bulu minimal'
+    },
+    'japanese-bobtail-long-hair': {
+        name: 'Kucing Japanese Bobtail Long Hair',
+        image: 'picture/japanese-bobtail-long-hair.jpg',
+        description: 'Japanese Bobtail Long Hair memiliki bulu panjang dan ekor pendek.',
+        origin: 'Jepun',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Membutuhkan perawatan bulu intensif'
+    },
+    'japanese-bobtail-short-hair': {
+        name: 'Kucing Japanese Bobtail Short Hair',
+        image: 'picture/japanese-bobtail-short-hair.jpg',
+        description: 'Japanese Bobtail Short Hair memiliki bulu pendek dan ekor pendek.',
+        origin: 'Jepun',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'khao-manee': {
+        name: 'Kucing Khao Manee',
+        image: 'picture/khao-manee.jpg',
+        description: 'Khao Manee memiliki bulu pendek dengan pola tabby yang unik.',
+        origin: 'Thailand',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'korat': {
+        name: 'Kucing Korat',
+        image: 'picture/korat.jpg',
+        description: 'Korat memiliki bulu pendek dengan warna biru keabu-abuan.',
+        origin: 'Thailand',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'la-perm': {
+        name: 'Kucing La Perm',
+        image: 'picture/la-perm.jpg',
+        description: 'La Perm memiliki bulu pendek yang keriting dan bergelombang.',
+        origin: 'Amerika Serikat',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal, sensitif terhadap suhu'
+    },
+    'manx': {
+        name: 'Kucing Manx',
+        image: 'picture/manx.jpg',
+        description: 'Manx memiliki tubuh yang kekar dengan ekor pendek.',
+        origin: 'Kepulauan Man',
+        traits: 'Cerdas, setia, dan suka bermain',
+        care: 'Perawatan bulu minimal'
+    },
+    'munchkin': {
+        name: 'Kucing Munchkin',
+        image: 'picture/munchkin.jpg',
+        description: 'Munchkin memiliki kaki yang pendek dan tubuh yang kekar.',
+        origin: 'Amerika Serikat',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'norwegian-forest': {
+        name: 'Kucing Norwegian Forest',
+        image: 'picture/norwegian-forest.jpg',
+        description: 'Norwegian Forest memiliki bulu panjang dan tebal dengan tubuh yang kekar.',
+        origin: 'Norwegia',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Membutuhkan perawatan bulu intensif'
+    },
+    'ocicat': {
+        name: 'Kucing Ocicat',
+        image: 'picture/ocicat.jpg',
+        description: 'Ocicat memiliki bulu pendek dengan pola tabby yang unik.',
+        origin: 'Amerika Serikat',
+        traits: 'Aktif, cerdas, dan su ka bermain',
+        care: 'Perawatan minimal'
+    },
+    'oriental-long-hair': {
+        name: 'Kucing Oriental Long Hair',
+        image: 'picture/oriental-long-hair.jpg',
+        description: 'Oriental Long Hair memiliki bulu panjang dan tebal dengan tubuh yang kekar.',
+        origin: 'Thailand',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Membutuhkan perawatan bulu intensif'
+    },
+    'oriental-short-hair': {
+        name: 'Kucing Oriental Short Hair',
+        image: 'picture/oriental-short-hair.jpg',
+        description: 'Oriental Short Hair memiliki bulu pendek dengan tubuh yang kekar.',
+        origin: 'Thailand',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'pixiebob': {
+        name: 'Kucing Pixiebob',
+        image: 'picture/pixiebob.jpg',
+        description: 'Pixiebob memiliki bulu pendek dengan pola tabby yang unik.',
+        origin: 'Amerika Serikat',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'ragdoll': {
+        name: 'Kucing Ragdoll',
+        image: 'picture/ragdoll.jpg',
+        description: 'Ragdoll memiliki bulu panjang dan tebal dengan tubuh yang kekar.',
+        origin: 'Amerika Serikat',
+        traits: 'Tenang, lembut, dan suka bermanja',
+        care: 'Membutuhkan perawatan bulu intensif'
+    },
+    'russian-blue': {
+        name: 'Kucing Russian Blue',
+        image: 'picture/russian-blue.jpg',
+        description: 'Russian Blue memiliki bulu pendek dengan warna biru keabu-abuan.',
+        origin: 'Rusia',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'savannah': {
+        name: 'Kucing Savannah',
+        image: 'picture/savannah.jpg',
+        description: 'Savannah memiliki bulu pendek dengan pola tabby yang unik.',
+        origin: 'Amerika Serikat',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'scottish-fold': {
+        name: 'Kucing Scottish Fold',
+        image: 'picture/scottish-fold.jpg',
+        description: 'Scottish Fold memiliki telinga yang lipat dan bulu pendek.',
+        origin: 'Skotlandia',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'selkirk-rex': {
+        name: 'Kucing Selkirk Rex',
+        image: 'picture/selkirk-rex.jpg',
+        description: 'Selkirk Rex memiliki bulu pendek yang keriting dan bergelombang.',
+        origin: 'Amerika Serikat',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal, sensitif terhadap suhu'
+    },
+    'siberian-forest': {
+        name: 'Kucing Siberian Forest',
+        image: 'picture/siberian-forest.jpg',
+        description: 'Siberian Forest memiliki bulu panjang dan tebal dengan tubuh yang kekar.',
+        origin: 'Rusia',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Membutuhkan perawatan bulu intensif'
+    },
+    'singapura': {
+        name: 'Kucing Singapura',
+        image: 'picture/singapura.jpg',
+        description: 'Singapura memiliki bulu pendek dengan pola tabby yang unik.',
+        origin: 'Singapura',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'snowshoe': {
+        name: 'Kucing Snowshoe',
+        image: 'picture/snowshoe.jpg',
+        description: 'Snowshoe memiliki bulu pendek dengan pola tabby yang unik.',
+        origin: 'Amerika Serikat',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'somali': {
+        name: 'Kucing Somali',
+        image: 'picture/somali.jpg',
+        description: 'Somali memiliki bulu panjang dan tebal dengan tubuh yang kekar.',
+        origin: 'Somalia',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Membutuhkan perawatan bulu intensif'
+    },
+    'sphynx': {
+        name: 'Kucing Sphynx',
+        image: 'picture/sphynx.jpg',
+        description: 'Sphynx tidak memiliki bulu dan memiliki tubuh yang kekar.',
+        origin: 'Amerika Serikat',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan kulit yang intensif'
+    },
+    'tiffanie': {
+        name: 'Kucing Tiffanie',
+        image: 'picture/tiffanie.jpg',
+        description: 'Tiffanie memiliki bulu pendek dengan pola tabby yang unik.',
+        origin: 'Inggris',
+        traits: 'Cerdas, penuh kasih sayang, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'tonkinese': {
+        name: 'Kucing Tonkinese',
+        image: 'picture/tonkinese.jpg',
+        description: 'Tonkinese memiliki bulu pendek dengan pola tabby yang unik.',
+        origin: 'Thailand',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal'
+    },
+    'turkish-van': {
+        name: 'Kucing Turkish Van',
+        image: 'picture/turkish-van.jpg',
+        description: 'Turkish Van memiliki bulu pendek dengan pola tabby yang unik.',
+        origin: 'Turki',
+        traits: 'Aktif, cerdas, dan suka bermain',
+        care: 'Perawatan minimal'
+    }
+};
+
+function showInfo(catBreed) {
+    const cat = catInfo[catBreed] || {
+        name: 'Ras Kucing Tidak Dikenal',
+        image: 'picture/unknown-cat.jpg',
+        description: 'Informasi tentang ras ini tidak tersedia.',
+        origin: 'Tidak diketahui',
+        traits: 'Tidak tersedia',
+        care: 'Tidak tersedia'
+    };
+
+    const infoContent = `
+        <h2>${cat.name}</h2>
+        <img src="${cat.image}" alt="${cat.name}">
+        <p>${cat.description}</p>
+        <ul>
+            <li>Asal: ${cat.origin}</li>
+            <li>Sifat: ${cat.traits}</li>
+            <li>Perawatan: ${cat.care}</li>
+        </ul>
+    `;
+
+    document.getElementById('modal-info').innerHTML = infoContent;
+    document.getElementById('info-modal').style.display = "block";
+}
+
+function closeInfo() {
+    document.getElementById('info-modal').style.display = "none";
+}
